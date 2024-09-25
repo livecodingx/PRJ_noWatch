@@ -6,7 +6,7 @@ import com.tecsup.prj_educacion.util.Tipo;
 
 public class DaoFactory {
 
-    public static UsuarioDao getAdministradorDao(Tipo tipo){
+    public static UsuarioDao getUsuarioDao(Tipo tipo){
         switch (tipo){
             case MEM:
                 //

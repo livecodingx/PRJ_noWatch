@@ -1,10 +1,11 @@
 package com.tecsup.prj_educacion.services.impl;
 
 import com.tecsup.prj_educacion.modelo.daos.UsuarioDao;
-import com.tecsup.prj_educacion.modelo.daos.impl.UsuarioDaoPreparedStatement;
+import com.tecsup.prj_educacion.modelo.daos.impl.DaoFactory;
 import com.tecsup.prj_educacion.modelo.entities.Usuario;
 import com.tecsup.prj_educacion.services.UsuarioService;
 import com.tecsup.prj_educacion.modelo.entities.PermiesoUsuario;
+import com.tecsup.prj_educacion.util.Util;
 
 
 import java.util.List;
@@ -14,7 +15,7 @@ public class UsuarioServiceImpl implements UsuarioService {
     private UsuarioDao dao;
 
     public UsuarioServiceImpl() {
-        this.dao = new UsuarioDaoPreparedStatement();
+        dao= DaoFactory.getUsuarioDao(Util.opc);
     }
 
     @Override
