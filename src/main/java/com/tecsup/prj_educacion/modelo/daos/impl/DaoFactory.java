@@ -1,19 +1,19 @@
 package com.tecsup.prj_educacion.modelo.daos.impl;
 
-import com.tecsup.prj_educacion.modelo.daos.AdministradorDao;
+import com.tecsup.prj_educacion.modelo.daos.UsuarioDao;
 import com.tecsup.prj_educacion.modelo.daos.CursoDao;
 import com.tecsup.prj_educacion.util.Tipo;
 
 public class DaoFactory {
 
-    public static AdministradorDao getAdministradorDao(Tipo tipo){
+    public static UsuarioDao getAdministradorDao(Tipo tipo){
         switch (tipo){
             case MEM:
-                //return new AdministradorDaoMemory();
+                //
             case PST:
-                //return new AdministradorDaoPreparedStatement();
+                return new UsuarioDaoPreparedStatement();
             case CST:
-                return new AdministradorDaoCallableStatement();
+                //
             default:
                 return null;
         }
